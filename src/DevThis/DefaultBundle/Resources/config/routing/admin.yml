@@ -1,0 +1,3 @@
+dev_this_admin_index:
+    pattern: /
+    defaults: { _controller: DevThisDefaultBundle:Admin:index }
