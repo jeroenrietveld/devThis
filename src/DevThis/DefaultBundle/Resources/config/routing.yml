@@ -1,0 +1,3 @@
+dev_this_default_homepage:
+    pattern:  /
+    defaults: { _controller: DevThisDefaultBundle:Default:index }

@@ -1,0 +1,4 @@
+dev_this_default:
+    resource: "@DevThisDefaultBundle/Resources/config/routing.yml"
+    prefix:   /
+
