@@ -12,4 +12,9 @@ return array(
     'NumberFormatter' => $baseDir . '/vendor/symfony/symfony/src/Symfony/Component/Locale/Resources/stubs/NumberFormatter.php',
     'SessionHandlerInterface' => $baseDir . '/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
     'SqlFormatter' => $baseDir . '/vendor/jdorn/sql-formatter/lib/SqlFormatter.php',
+    'lessc' => $baseDir . '/vendor/leafo/lessphp/lessc.inc.php',
+    'lessc_formatter_classic' => $baseDir . '/vendor/leafo/lessphp/lessc.inc.php',
+    'lessc_formatter_compressed' => $baseDir . '/vendor/leafo/lessphp/lessc.inc.php',
+    'lessc_formatter_lessjs' => $baseDir . '/vendor/leafo/lessphp/lessc.inc.php',
+    'lessc_parser' => $baseDir . '/vendor/leafo/lessphp/lessc.inc.php',
 );
