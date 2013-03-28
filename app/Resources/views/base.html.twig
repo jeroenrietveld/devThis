@@ -3,11 +3,29 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets
+                '@DevThisDefaultBundle/Resources/public/less/main.less'
+               filter='?yui_css, cssrewrite'
+               output='assets/css/app.css'
+            %}
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+            {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <h1>Dev This</h1>
+        </header>
+        <div id="sidebar">
+            {% block sidebar %}{% endblock %}
+        </div>
+        
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+        
         {% block javascripts %}{% endblock %}
     </body>
 </html>
