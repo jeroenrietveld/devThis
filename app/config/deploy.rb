@@ -10,12 +10,16 @@ set :scm,         :git
 set :branch,      "master"
 
 set :writable_dirs,   ["app/cache", "app/logs",]
-set :shared_files,    ["app/config/parameters.yml"]
+set :shared_files,    false
+set :shared_children, [app_path + "/logs", app_path + "/data",]
 
 set :keep_releases,    3
 set :update_vendors,   false
-set :interactive_mode, false
 set :use_composer,     true
+set :vendors_mode,     "install"
+set :interactive_mode, false
+
+set :dump_assetic_assets,   true
 
 set :model_manager, "doctrine"
 # Or: `propel`
