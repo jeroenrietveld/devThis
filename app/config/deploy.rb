@@ -15,6 +15,7 @@ set :shared_files,    ["app/config/parameters.yml"]
 set :keep_releases,    3
 set :update_vendors,   false
 set :interactive_mode, false
+set :use_composer,     true
 
 set :model_manager, "doctrine"
 # Or: `propel`
