@@ -10,7 +10,7 @@ set :scm,         :git
 set :branch,      "master"
 
 set :writable_dirs,   ["app/cache", "app/logs",]
-set :shared_files,    false
+set :shared_files, 	  ["app/config/parameters.yml"]
 set :shared_children, [app_path + "/logs", app_path + "/data",]
 
 set :keep_releases,    3

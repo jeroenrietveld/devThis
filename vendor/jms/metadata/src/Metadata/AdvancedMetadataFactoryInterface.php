@@ -16,14 +16,21 @@
  * limitations under the License.
  */
 
-namespace Metadata\Driver;
+namespace Metadata;
 
-interface DriverInterface
+/**
+ * Interface for advanced Metadata Factory implementations.
+ *
+ * @author Johannes M. Schmitt <schmittjoh@gmail.com>
+ * @author Jordan Stout <j@jrdn.org>
+ */
+interface AdvancedMetadataFactoryInterface extends MetadataFactoryInterface
 {
     /**
-     * @param \ReflectionClass $class
+     * Gets all the possible classes.
      *
-     * @return \Metadata\ClassMetadata
+     * @throws \RuntimeException if driver does not an advanced driver.
+     * @return array
      */
-    public function loadMetadataForClass(\ReflectionClass $class);
+    public function getAllClassNames();
 }

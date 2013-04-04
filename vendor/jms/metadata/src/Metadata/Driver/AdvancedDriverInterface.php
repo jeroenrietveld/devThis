@@ -18,12 +18,17 @@
 
 namespace Metadata\Driver;
 
-interface DriverInterface
+/**
+ * Forces advanced logic to drivers.
+ *
+ * @author Jordan Stout <j@jrdn.org>
+ */
+interface AdvancedDriverInterface extends DriverInterface
 {
     /**
-     * @param \ReflectionClass $class
+     * Gets all the metadata class names known to this driver.
      *
-     * @return \Metadata\ClassMetadata
+     * @return array
      */
-    public function loadMetadataForClass(\ReflectionClass $class);
+    public function getAllClassNames();
 }

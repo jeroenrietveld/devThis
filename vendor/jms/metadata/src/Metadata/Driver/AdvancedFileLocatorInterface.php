@@ -18,12 +18,19 @@
 
 namespace Metadata\Driver;
 
-interface DriverInterface
+/**
+ * Forces advanced logic on a file locator.
+ *
+ * @author Jordan Stout <j@jrdn.org>
+ */
+interface AdvancedFileLocatorInterface extends FileLocatorInterface
 {
     /**
-     * @param \ReflectionClass $class
+     * Finds all possible metadata files.
      *
-     * @return \Metadata\ClassMetadata
+     * @param string $extension
+     *
+     * @return array
      */
-    public function loadMetadataForClass(\ReflectionClass $class);
+    public function findAllClasses($extension);
 }
