@@ -18,12 +18,14 @@
         <header>
             <h1>Dev This</h1>
         </header>
-        <div id="sidebar">
-            {% block sidebar %}{% endblock %}
-        </div>
-        
-        <div id="content">
-            {% block body %}{% endblock %}
+        <div id="main">
+            <div id="sidebar">
+                {% block sidebar %}{% endblock %}
+            </div>
+            
+            <div id="content">
+                {% block body %}{% endblock %}
+            </div>
         </div>
         
         {% block javascripts %}{% endblock %}
