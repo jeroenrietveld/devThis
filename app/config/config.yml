@@ -30,7 +30,7 @@ assetic:
     debug:          %kernel.debug%
     use_controller: false
     bundles:        [ ]
-    java: /etc/pki/java
+    #java: /usr/bin/java
     filters:
         cssrewrite: ~
         #closure:
