@@ -22,6 +22,11 @@ class Category
     protected $name;
 
     /**
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="category")
+     */
+    protected $posts;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -52,5 +57,45 @@ class Category
     public function getName()
     {
         return $this->name;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add posts
+     *
+     * @param \DevThis\DefaultBundle\Entity\Post $posts
+     * @return Category
+     */
+    public function addPost(\DevThis\DefaultBundle\Entity\Post $posts)
+    {
+        $this->posts[] = $posts;
+    
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \DevThis\DefaultBundle\Entity\Post $posts
+     */
+    public function removePost(\DevThis\DefaultBundle\Entity\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
     }
 }

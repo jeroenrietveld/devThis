@@ -2,20 +2,29 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Dev This Admin{% endblock %}</title>
+        <title>{% block title %}DevThis - Admin{% endblock %}</title>
         {% block stylesheets %}
+            {% stylesheets
+                '@DevThisDefaultBundle/Resources/public/less/main.less'
+                'bundles/mopabootstrap/less/mopabootstrapbundle.less'
+               filter='?yui_css, cssrewrite'
+               output='assets/css/app.css'
+            %}
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+            {% endstylesheets %}
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        <header>
-            <h1>Dev This</h1>
-        </header>
+
         
-        <div id="content">
-            {% block body %}{% endblock %}
-        </div>
-        
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts
+                'http://code.jquery.com/jquery-1.8.2.min.js'
+                '@DevThisDefaultBundle/Resources/public/js/bootstrap.min.js'
+                filter='?yui_js' output='assets/js/admin.js' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
