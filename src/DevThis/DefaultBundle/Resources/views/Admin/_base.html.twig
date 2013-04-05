@@ -1,0 +1,9 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block menu %}
+	<div class="navbar">
+        <div class="navbar-inner">
+            {{ knp_menu_render('DevThisDefaultBundle:MenuBuilder:adminMenu', {'currentClass': 'active'}) }}
+        </div>
+    </div>
+{% endblock %}

@@ -19,4 +19,16 @@ class MenuBuilder extends ContainerAware
 
         return $menu;
     }
+
+    public function adminMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav');
+
+        $menu->addChild('Admin', array('route' => 'dev_this_admin_index'));
+        $menu->addChild('Categories', array('route' => 'dev_this_admin_categories'));
+        $menu->addChild('Posts', array('route' => 'dev_this_admin_posts'));
+
+        return $menu;
+    }
 }

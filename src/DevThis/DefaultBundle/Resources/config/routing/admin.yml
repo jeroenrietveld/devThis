@@ -1,3 +1,19 @@
 dev_this_admin_index:
     pattern: /
     defaults: { _controller: DevThisDefaultBundle:Admin:index }
+
+dev_this_admin_categories:
+    pattern: /categories
+    defaults: { _controller: DevThisDefaultBundle:Admin:categories }
+
+dev_this_admin_posts:
+    pattern: /posts
+    defaults: { _controller: DevThisDefaultBundle:Admin:posts }
+
+dev_this_admin_category_create:
+    pattern: /category
+    defaults: { _controller: DevThisDefaultBundle:Admin:createCategory }
+
+dev_this_admin_post_create:
+    pattern: /post
+    defaults: { _controller: DevThisDefaultBundle:Admin:createPost }
