@@ -86,7 +86,7 @@ class AdminController extends Controller
     public function editCategoryAction($category_id)
     {
         $em       = $this->getDoctrine()->getManager();
-        $category = $em->getRepository('DevThisDefaultBundle:Category')->find($category_ids);
+        $category = $em->getRepository('DevThisDefaultBundle:Category')->find($category_id);
 
         $form = $this->createForm(new CategoryType(), $category);
 
