@@ -5,8 +5,8 @@
         <title>{% block title %}DevThis{% endblock %}</title>
         {% block stylesheets %}
             {% stylesheets
-                '@DevThisDefaultBundle/Resources/public/less/main.less'
                 'bundles/mopabootstrap/less/mopabootstrapbundle.less'
+                '@DevThisDefaultBundle/Resources/public/less/main.less'
                filter='?yui_css, cssrewrite'
                output='assets/css/app.css'
             %}
