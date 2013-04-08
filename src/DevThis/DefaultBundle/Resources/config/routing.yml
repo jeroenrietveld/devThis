@@ -8,7 +8,7 @@ dev_this_default_homepage_category:
 
 dev_this_default_homepage_post:
     pattern:  /post/{post}
-    defaults: { _controller: DevThisDefaultBundle:Default:index }
+    defaults: { _controller: DevThisDefaultBundle:Default:post }
 
 dev_this_default_homepage_menu:
     pattern:  /menu

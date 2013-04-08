@@ -15,7 +15,7 @@
 				    <td>{{ category.id }}</td>
 				    <td>{{ category.name }}</td>
 				    <td>
-				    	<a href="{{ path('dev_this_admin_index') }}" class="btn">Edit</a>
+				    	<a href="{{ path('dev_this_admin_category_edit', {category_id: category.id}) }}" class="btn">Edit</a>
 						<a href="#" class="btn btn-danger">
 							<i class="icon-search icon-trash"></i>
 						</a>

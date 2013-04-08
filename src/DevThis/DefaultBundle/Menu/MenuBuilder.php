@@ -14,7 +14,9 @@ class MenuBuilder extends ContainerAware
         $posts = $options['category']->getPosts();
 
         foreach($posts as $post) {
-            $menu->addChild($post->getName(), array('route' => 'dev_this_default_homepage'));
+            $menu->addChild($post->getName(), 
+                array('route' => 'dev_this_default_homepage_post', 'routeParameters' => array('post' => $post->getId())
+            ));
         }
 
         return $menu;

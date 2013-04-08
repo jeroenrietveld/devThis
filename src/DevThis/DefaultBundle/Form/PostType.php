@@ -22,8 +22,7 @@ class PostType extends AbstractType
                 'class'    => 'DevThisDefaultBundle:Category',
                 'property' => 'name',
             ))
-            ->add('content', 'textarea', array(
-                'attr'  => array('class' => 'tinymce'),
+            ->add('content', 'ckeditor', array(
             ))
         ;
     }

@@ -82,4 +82,54 @@ class AdminController extends Controller
 
         return $this->render('DevThisDefaultBundle:Admin:createPost.html.twig', array('form' => $form->createView()));
     }
+
+    public function editCategoryAction($category_id)
+    {
+        $em       = $this->getDoctrine()->getManager();
+        $category = $em->getRepository('DevThisDefaultBundle:Category')->find($category_ids);
+
+        $form = $this->createForm(new CategoryType(), $category);
+
+        if("POST" == $this->getRequest()->getMethod()) {
+            $form->bindRequest($this->getRequest());
+
+            if($form->isValid()) {
+                $this->get('session')->getFlashBag()->add('success', 'category updated');
+
+                $em->persist($post);
+                $em->flush();
+
+                $url  = $this->generateUrl('dev_this_admin_categories');
+
+                return $this->redirect($url);
+            }
+        }
+
+        return $this->render('DevThisDefaultBundle:Admin:createCategory.html.twig', array('form' => $form->createView()));
+    }
+
+    public function editPostAction($post_id)
+    {
+        $em   = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('DevThisDefaultBundle:Post')->find($post_id);
+
+        $form = $this->createForm(new PostType(), $post);
+
+        if("POST" == $this->getRequest()->getMethod()) {
+            $form->bindRequest($this->getRequest());
+
+            if($form->isValid()) {
+                $this->get('session')->getFlashBag()->add('success', 'post updated');
+
+                $em->persist($post);
+                $em->flush();
+
+                $url  = $this->generateUrl('dev_this_admin_posts');
+
+                return $this->redirect($url);
+            }
+        }
+
+        return $this->render('DevThisDefaultBundle:Admin:createPost.html.twig', array('form' => $form->createView()));
+    }
 }

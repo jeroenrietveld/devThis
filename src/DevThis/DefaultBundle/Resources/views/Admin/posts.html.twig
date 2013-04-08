@@ -17,7 +17,7 @@
 				    <td>{{ post.name }}</td>
 				    <td>{{ post.category.name }}</td>
 				    <td>
-				    	<a href="{{ path('dev_this_admin_index') }}" class="btn">Edit</a>
+				    	<a href="{{ path('dev_this_admin_post_edit', {post_id: post.id}) }}" class="btn">Edit</a>
 						<a href="#" class="btn btn-danger">
 							<i class="icon-search icon-trash"></i>
 						</a>

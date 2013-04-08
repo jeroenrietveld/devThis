@@ -17,3 +17,11 @@ dev_this_admin_category_create:
 dev_this_admin_post_create:
     pattern: /post
     defaults: { _controller: DevThisDefaultBundle:Admin:createPost }
+
+dev_this_admin_category_edit:
+    pattern: /category/{category_id}
+    defaults: { _controller: DevThisDefaultBundle:Admin:editCategory }
+
+dev_this_admin_post_edit:
+    pattern: /post/{post_id}
+    defaults: { _controller: DevThisDefaultBundle:Admin:editPost }
