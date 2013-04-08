@@ -18,10 +18,12 @@ class PostType extends AbstractType
             ->add('name', 'text', array(
                 'required' => true,
             ))
-            
             ->add('category', 'entity', array(
                 'class'    => 'DevThisDefaultBundle:Category',
                 'property' => 'name',
+            ))
+            ->add('content', 'textarea', array(
+                'attr'  => array('class' => 'tinymce'),
             ))
         ;
     }

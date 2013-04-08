@@ -18,6 +18,8 @@ class CategoryType extends AbstractType
             ->add('name', 'text', array(
                 'required' => true,
             ))
+            ->add('content', 'ckeditor', array(
+            ))
         ;
     }
     public function getName()

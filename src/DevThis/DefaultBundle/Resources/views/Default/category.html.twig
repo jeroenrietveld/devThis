@@ -3,6 +3,6 @@
 {% block body %}
 	<h1>{{ category.name }}</h1>
 	{% for post in category.posts %}
-		<p>{{ post.name }}</p>
+		<p><a href="{{ path('dev_this_default_homepage_post', {post: post.id}) }}">{{ post.name }}</a></p>
 	{% endfor %}
 {% endblock %}

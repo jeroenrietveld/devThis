@@ -28,15 +28,27 @@ class DefaultController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
     	$category = $em->getRepository('DevThisDefaultBundle:Category')->find($category);
-    	$categories = $em->getRepository('DevThisDefaultBundle:Category')->findAll();
 
     	if(!$category instanceof Category) {
     		throw $this->createNotFoundException('Could not find category.');
     	}
 
     	return $this->render('DevThisDefaultBundle:Default:category.html.twig', array(
-    		'category' => $category,
-        	'categories' => $categories
+    		'category' => $category
+    	));
+    }
+
+    public function postAction($post)
+    {
+		$em = $this->getDoctrine()->getManager();
+    	$post = $em->getRepository('DevThisDefaultBundle:Post')->find($post);
+
+    	if(!$post instanceof Post) {
+    		throw $this->createNotFoundException('Could not find category.');
+    	}
+
+    	return $this->render('DevThisDefaultBundle:Default:post.html.twig', array(
+    		'post' => $post
     	));
     }
 }

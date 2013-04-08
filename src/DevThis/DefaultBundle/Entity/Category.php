@@ -27,6 +27,11 @@ class Category
     protected $posts;
 
     /**
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -97,5 +102,28 @@ class Category
     public function getPosts()
     {
         return $this->posts;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     * @return Category
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 }

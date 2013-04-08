@@ -28,6 +28,11 @@ class Post
     protected $category;
 
     /**
+     * @ORM\Column(name="content", type="text")
+     */
+    private $content;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -81,5 +86,28 @@ class Post
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     * @return Post
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 }

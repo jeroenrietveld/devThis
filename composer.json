@@ -24,7 +24,8 @@
         "knplabs/knp-menu": "2.0.*@dev",
         "knplabs/knp-menu-bundle": "2.0.*@dev",
         "twitter/bootstrap": "dev-master",
-        "mopa/bootstrap-bundle": "dev-master"
+        "mopa/bootstrap-bundle": "dev-master",
+        "egeloen/ckeditor-bundle": "2.*"
     },
     "scripts": {
         "post-install-cmd": [
