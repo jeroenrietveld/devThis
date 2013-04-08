@@ -1,0 +1,10 @@
+{% for category in categories %}
+	<li class="nav-header">
+		<a class="category" href="{{ path('dev_this_default_homepage_category', {category: category.id}) }}">
+			{{ category.name }}
+		</a>
+	</li>
+
+	{% set menu = knp_menu_get('DevThisDefaultBundle:MenuBuilder:mainMenu', [], {'category': category}) %}
+	{{ knp_menu_render(menu, {'currentClass': 'active'}) }}
+{% endfor %}

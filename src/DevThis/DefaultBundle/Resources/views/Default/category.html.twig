@@ -1,0 +1,8 @@
+{% extends 'DevThisDefaultBundle:Default:_base.html.twig' %}
+
+{% block body %}
+	<h1>{{ category.name }}</h1>
+	{% for post in category.posts %}
+		<p>{{ post.name }}</p>
+	{% endfor %}
+{% endblock %}

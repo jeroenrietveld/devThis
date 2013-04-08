@@ -2,6 +2,18 @@ dev_this_default_homepage:
     pattern:  /
     defaults: { _controller: DevThisDefaultBundle:Default:index }
 
+dev_this_default_homepage_category:
+    pattern:  /category/{category}
+    defaults: { _controller: DevThisDefaultBundle:Default:category }
+
+dev_this_default_homepage_post:
+    pattern:  /category/{category}/{post}
+    defaults: { _controller: DevThisDefaultBundle:Default:index }
+
+dev_this_default_homepage_menu:
+    pattern:  /menu
+    defaults: { _controller: DevThisDefaultBundle:Default:menuRender }
+
 dev_this_admin:
     resource: "./routing/admin.yml"
     prefix: /admin

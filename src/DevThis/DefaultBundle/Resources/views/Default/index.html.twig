@@ -1,13 +1,4 @@
-{% extends '::base.html.twig' %}
-
-{% block nav %}
-	{% for category in categories %}
-		<li class="nav-header">{{ category.name }}</li>
-
-		{% set menu = knp_menu_get('DevThisDefaultBundle:MenuBuilder:mainMenu', [], {'category': category}) %}
-		{{ knp_menu_render(menu, {'currentClass': 'active'}) }}
-	{% endfor %}
-{% endblock %}
+{% extends 'DevThisDefaultBundle:Default:_base.html.twig' %}
 
 {% block body %}
 	<h1>Hello!</h1>
